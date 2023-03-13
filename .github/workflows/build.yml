@@ -19,3 +19,7 @@ jobs:
         run: |
           echo "Free space:"
           df -h
+      - name: Run Nvidia base image to test
+        run: |
+          docker run --rm nvidia/cuda:11.7.1-devel-ubuntu22.04 df -h
+
