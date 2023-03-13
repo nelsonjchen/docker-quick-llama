@@ -1,5 +1,7 @@
-# This is for quick development with a single command like `docker-compose run dev`
+# This is for quick development with a single command like `docker compose run --build dev`
 services:
   dev:
-    build: .
-
+    build:
+      context: .
+      tags:
+        - "ghcr.io/nelsonjchen/docker-quick-llama:devel"
