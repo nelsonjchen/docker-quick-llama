@@ -4,5 +4,5 @@ services:
     build:
       context: .
       tags:
-        - "ghcr.io/nelsonjchen/docker-quick-llama/kaniko:devel"
+        - "ghcr.io/nelsonjchen/docker-quick-llama/main:devel"
         - "ghcr.io/nelsonjchen/docker-quick-llama/cache:devel"
