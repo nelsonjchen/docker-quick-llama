@@ -1,6 +1,9 @@
 name: Build
 on: push
 
+permissions:
+  packages: write
+
 jobs:
   build:
     name: Build
