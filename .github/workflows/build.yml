@@ -15,7 +15,11 @@ jobs:
         run: |
           echo "Free space:"
           df -h
-      - name: Run Nvidia base image to test
-        run: |
-          docker run --rm nvidia/cuda:11.7.1-devel-ubuntu22.04 df -h
-
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          registry: ghcr.io
+          password: ${{ secrets.GITHUB_TOKEN }}
+          image: kaniko
+          cache: true
+          cache_registry: cache
