@@ -1,5 +1,10 @@
 name: Build
-on: push
+# Run on push, every day, and on demand
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
