@@ -18,7 +18,7 @@ apologies for the skeitchiness
 
 Make sure you have accounts on vast.ai or runpod.io or similar, and have some money loaded on them.
 
-Specify the `ghcr.io/nelsonjchen/docker-quick-llama:nightly`, 50GB of space, and target a host and GPU that is at least a 3080 or above with CUDA 12.
+Specify the `ghcr.io/nelsonjchen/docker-quick-llama:main`, 50GB of space, and target a host and GPU that is at least a 3080 or above with CUDA 12.
 
 One template to use might be this: https://console.vast.ai/?ref_id=46153&template_id=b785ef1aede88b85cf8dd818503d2778
 
