@@ -1,6 +1,6 @@
 # oobabooga Text generation web UI Llama Docker Toolkit
 
-*WIP as the situation is rapidly, rapidly evolving.*
+*WIP as the situation is rapidly, rapidly evolving. people are running this on CPUs with fast RAM instead of GPUs so maybe this might not be worth it.*
 
 STATUS: Not ready, just sketching out.
 
@@ -14,11 +14,13 @@ The outputs of this toolkit are this guide with some rough guidance, and an acce
 
 ## Usage
 
+apologies for the skeitchiness
+
 Make sure you have accounts on vast.ai or runpod.io or similar, and have some money loaded on them.
 
-Specify this image and target a GPU that is at least a 1080 or above.
+Specify this image and target a host and GPU that is at least a 3080 or above with CUDA 12.
 
-In the built environment, login and install the weights accordingly to the guide. Included in the image is `aria2c`, a wonderful download tool that supports BitTorrent and HTTP downloads.
+In the built environment, login and install the weights accordingly to the guide. You can download weights with `curl -L -O` as well. Alternatively you can use aria2c to torrent alternative sources for the weights.
 
 ### Vast.ai
 
