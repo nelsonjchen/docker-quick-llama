@@ -23,8 +23,3 @@ Specify the `ghcr.io/nelsonjchen/docker-quick-llama:main`, 50GB of space, and ta
 One template to use might be this: https://console.vast.ai/?ref_id=46153&template_id=b785ef1aede88b85cf8dd818503d2778
 
 In the built environment, login and install the weights accordingly to the guide. You can download weights with `curl -L -O` as well. Alternatively you can use aria2c to torrent alternative sources for the weights.
-
-### Vast.ai
-
-You should already have a vast.ai account and have loaded it with some money.
-
