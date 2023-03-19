@@ -1,4 +1,5 @@
-FROM nvidia/cuda:11.7.1-devel-ubuntu22.04
+# Reference https://gitlab.com/nvidia/container-images/cuda/blob/master/doc/supported-tags.md
+FROM nvcr.io/nvidia/cuda:11.7.1-devel-ubuntu22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
