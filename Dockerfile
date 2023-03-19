@@ -31,5 +31,6 @@ RUN cd /text-generation-webui/ && \
   python3 download-model.py --text-only decapoda-research/llama-30b-hf && \
   python3 download-model.py --text-only decapoda-research/llama-65b-hf
 
-# Set PYTHONPATH in shell to include GPTQ-for-LLaMa
-RUN echo 'export PYTHONPATH="/GPTQ-for-LLaMa:$PYTHONPATH"' >> ~/.bashrc
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
+ENV PYTHONPATH="/GPTQ-for-LLaMa:$PYTHONPATH"
