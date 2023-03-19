@@ -31,6 +31,11 @@ RUN cd /text-generation-webui/ && \
   python3 download-model.py --text-only decapoda-research/llama-30b-hf && \
   python3 download-model.py --text-only decapoda-research/llama-65b-hf
 
+# Reference: https://github.com/oobabooga/text-generation-webui/issues/416#issuecomment-1475105606
+#  Search and replace all instances of "LLaMATokenizer" to "LlamaTokenizer" in "tokenizer_config.json" underneath /text-generation-webui/models
+RUN cd /text-generation-webui/models && \
+  find . -name "tokenizer_config.json" -exec sed -i 's/LLaMATokenizer/LlamaTokenizer/g' {} \;
+
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 ENV PYTHONPATH="/GPTQ-for-LLaMa:$PYTHONPATH"
