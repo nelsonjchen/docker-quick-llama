@@ -5,7 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y update
 # Makes it easier to go download stuff
-RUN apt-get install -y git python3 python3-pip aria2
+RUN apt-get install -y git python3 python3-pip aria2 wget curl
 
 # Set common alias
 RUN echo 'alias python="python3"' >> ~/.bashrc
@@ -35,6 +35,13 @@ RUN cd /text-generation-webui/ && \
 #  Search and replace all instances of "LLaMATokenizer" to "LlamaTokenizer" in "tokenizer_config.json" underneath /text-generation-webui/models
 RUN cd /text-generation-webui/models && \
   find . -name "tokenizer_config.json" -exec sed -i 's/LLaMATokenizer/LlamaTokenizer/g' {} \;
+
+# No 4 bit models included. See https://huggingface.co/maderix/llama-65b-4bit/tree/main
+# Make a bash script at /download-4bit-model.sh to download the 30b model with curl from https://huggingface.co/maderix/llama-65b-4bit/resolve/main/llama30b-4bit.pt to /text-generation-webui/models/llama-30b-hf/llama30b-4bit.pt and make it executable
+RUN echo '#!/bin/bash' > /download-4bit-model.sh && \
+  echo 'curl -L https://huggingface.co/maderix/llama-65b-4bit/resolve/main/llama30b-4bit.pt -o /text-generation-webui/models/llama-30b-hf/llama30b-4bit.pt' >> /download-4bit-model.sh && \
+  chmod +x /download-4bit-model.sh
+
 
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
