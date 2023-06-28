@@ -2,7 +2,7 @@
 
 *WIP as the situation is rapidly, rapidly evolving. people are running this on CPUs with fast RAM instead of GPUs so maybe this might not be worth it.*
 
-STATUS: Not ready, just sketching out.
+STATUS: Not ready, just sketching out. I wouldn't recommend this tool. It's honestly a bit pre-quant and pre a lot of advancements since the last substantial changes. 
 
 This is a toolkit to run "Text generation web UI" from [oobabooga](https://github.com/oobabooga/text-generation-webui) with Llama weights on [vast.ai](https://vast.ai), [runpod.io](https://www.runpod.io/) or similar cheap GPU providers.
 
